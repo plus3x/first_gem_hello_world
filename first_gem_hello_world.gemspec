@@ -1,9 +1,9 @@
 Gem::Specification.new do |s|
-  s.name        = 'first_gem'
-  s.homepage    = 'http://rubygems.org/gems/first_gem'
+  s.name        = 'first_gem_hello_world'
+  s.homepage    = 'http://rubygems.org/gems/first_gem_hello_world'
   s.version     = '0.0.0'
   s.date        = '2014-06-25'
-  s.summary     = 'First gem'
+  s.summary     = 'First gem hello world'
   s.description = 'A simple hello world gem'
   s.author      = 'Vladislav Petrov'
   s.email       = 'electronicchest@gmail.com'
