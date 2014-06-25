@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+require 'optparse'
+
+require './lib/first_gem_hello_world'
+
+OptionParser.new do |parser|
+  parser.banner = <<BANNER
+FirstGemHelloWorld can say him self version)
+
+Usage:
+    first_gem_hello_world
+
+Options:
+BANNER
+  parser.on('-v', '--version', 'Show Version'){ puts FirstGemHelloWorld::VERSION; exit}
+  parser.on('-h', '--help', 'Show this.') { puts parser; exit }
+  parser.on { puts parser; exit }
+end.parse!
