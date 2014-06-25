@@ -1,7 +1,8 @@
-Gem::Specification.new do |s|
-  s.name        = 'first_gem_hello_world'
+require './lib/first_gem_hello_world'
+
+Gem::Specification.new 'first_gem_hello_world' do |s|
+  s.version     = FirstGemHelloWorld::VERSION
   s.homepage    = 'http://rubygems.org/gems/first_gem_hello_world'
-  s.version     = '0.0.0'
   s.date        = '2014-06-25'
   s.summary     = 'First gem hello world'
   s.description = 'A simple hello world gem'
