@@ -10,6 +10,7 @@ Gem::Specification.new 'first_gem_hello_world' do |s|
   s.email       = 'electronicchest@gmail.com'
   s.license     = 'MIT'
   s.platform    = Gem::Platform::RUBY
+  s.post_install_message = 'Thanks for installing!'
 
   s.required_ruby_version     = '>= 2.1.2'
   s.required_rubygems_version = '>= 2.3.0'
