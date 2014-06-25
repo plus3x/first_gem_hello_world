@@ -13,5 +13,6 @@ Gem::Specification.new do |s|
   s.required_ruby_version     = '>= 2.1.2'
   s.required_rubygems_version = '>= 2.3.0'
   
-  s.files = Dir['lib/**/*']
+  # s.executables  = ['hello_world']
+  s.files = `git ls-files lib bin`.split("\n")
 end
