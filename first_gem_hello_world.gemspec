@@ -6,7 +6,7 @@ Gem::Specification.new 'first_gem_hello_world' do |s|
   s.date        = '2014-06-25'
   s.summary     = 'First gem hello world'
   s.description = 'A simple hello world gem'
-  s.author      = 'Vladislav Petrov'
+  s.authors     = ['Vladislav Petrov', 'Mike Zagorulko']
   s.email       = 'electronicchest@gmail.com'
   s.license     = 'MIT'
   s.platform    = Gem::Platform::RUBY
