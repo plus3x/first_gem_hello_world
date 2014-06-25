@@ -1,5 +1,5 @@
 class Hello
-  def self.world
-    self.name + 'world'
+  def self.world(word = 'world')
+    "#{self.name} #{word}!!!"
   end
 end

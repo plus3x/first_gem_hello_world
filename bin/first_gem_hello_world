@@ -1,18 +1,40 @@
 #!/usr/bin/env ruby
+$LOAD_PATH << './lib'
+
 require 'optparse'
 
-require './lib/first_gem_hello_world'
+require 'first_gem_hello_world'
+require 'hello'
 
-OptionParser.new do |parser|
-  parser.banner = <<BANNER
-FirstGemHelloWorld can say him self version)
+options = {}
+OptionParser.new do |opt|
+  opt.banner  = "Usage:\n    first_gem_hello_world WORD [OPTIONS]"
+  opt.separator ''
+  opt.separator 'Options'
 
-Usage:
-    first_gem_hello_world
+  opt.on('--world', 'Print "Hello world!!!"') do
+    options[:world] = true
+  end
 
-Options:
-BANNER
-  parser.on('-v', '--version', 'Show Version'){ puts FirstGemHelloWorld::VERSION; exit}
-  parser.on('-h', '--help', 'Show this.') { puts parser; exit }
-  parser.on { puts parser; exit }
+  opt.on('-w', '--word', String, 'Word after "Hello"') do |word|
+    options[:word] = word
+  end
+
+  opt.on_tail('-v', '--version', 'Show Version') do
+    puts FirstGemHelloWorld::VERSION
+    exit
+  end
+
+  opt.on_tail('-h', '--help', 'Show this.') { puts opt; exit }
+  
+  if ARGV.empty? && options.empty?
+    opt.on { puts opt; exit }
+  end
 end.parse!
+
+if options[:world]
+  puts Hello.world
+else
+  word = options[:word] || ARGV[0]
+  puts Hello.world(word)
+end
